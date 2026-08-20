@@ -25,7 +25,7 @@ env:
   # Pin Hugo so site builds don't break when a new release ships
   # incompatible template changes. Bump deliberately, not by
   # surprise.
-  HUGO_VERSION: 0.135.0
+  HUGO_VERSION: 0.162.1
 
 jobs:
   build:
