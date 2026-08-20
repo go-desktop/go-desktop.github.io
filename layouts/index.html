@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ .Site.Title }} — a map of the pure-Go ecosystem</title>
+<meta name="description" content="One map of a pure-Go ecosystem: a widget toolkit and the desktop around it, typesetting and fonts, storage and filesystems, firmware and boot, a Ruby virtual machine with one organisation per gem, SIMD kernels, microVMs and configuration management. CGO_ENABLED=0 throughout, six 64-bit targets, 100% statement coverage as a CI gate, BSD-3-Clause.">
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1b1f24; --muted: #57606a; --card: #f6f8fa;
+    --border: #d0d7de; --accent: #1d4ed8; --accent-fg: #ffffff; --chip: #eef2ff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      --bg: #0d1117; --fg: #e6edf3; --muted: #9198a1; --card: #161b22;
+      --border: #30363d; --accent: #7aa7ff; --accent-fg: #0d1117; --chip: #172033;
+    }
+  }
+  /* Forced dark (manual toggle wins over the OS preference). */
+  :root[data-theme="dark"] {
+    --bg: #0d1117; --fg: #e6edf3; --muted: #9198a1; --card: #161b22;
+    --border: #30363d; --accent: #7aa7ff; --accent-fg: #0d1117; --chip: #172033;
+  }
+  /* Forced light (manual toggle wins over the OS preference). */
+  :root[data-theme="light"] {
+    --bg: #ffffff; --fg: #1b1f24; --muted: #57606a; --card: #f6f8fa;
+    --border: #d0d7de; --accent: #1d4ed8; --accent-fg: #ffffff; --chip: #eef2ff;
+  }
+  .theme-toggle {
+    position: fixed; top: 14px; right: 14px; z-index: 10;
+    font: inherit; font-size: .8rem; cursor: pointer; padding: 6px 12px;
+    color: var(--fg); background: var(--card); border: 1px solid var(--border); border-radius: 999px;
+  }
+  .theme-toggle:hover { border-color: var(--accent); }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 72px 0 24px; text-align: center; }
+  .logo { width: 88px; height: 88px; margin: 0 auto 18px; display: block; }
+  h1 { font-size: 2.6rem; margin: 0 0 .3em; letter-spacing: -.02em; }
+  .tagline { font-size: 1.2rem; color: var(--muted); margin: 0 auto; max-width: 720px; }
+  .pills { margin: 22px 0 0; }
+  .pill {
+    display: inline-block; margin: 4px; padding: 3px 10px; font-size: .82rem;
+    color: var(--muted); background: var(--card); border: 1px solid var(--border); border-radius: 999px;
+  }
+  .cta { margin: 30px 0 0; }
+  .btn {
+    display: inline-block; padding: 10px 18px; margin: 4px; border-radius: 8px; text-decoration: none;
+    font-weight: 600; border: 1px solid var(--border);
+  }
+  .btn.primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+  .btn.ghost { color: var(--fg); background: transparent; }
+  .lead { color: var(--fg); max-width: 820px; margin: 10px auto 0; text-align: center; }
+  .lead code { background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; }
+  .toc { text-align: center; margin: 34px auto 0; max-width: 900px; }
+  .toc a {
+    display: inline-block; margin: 4px; padding: 4px 11px; font-size: .85rem; text-decoration: none;
+    color: var(--fg); background: var(--card); border: 1px solid var(--border); border-radius: 999px;
+  }
+  .toc a:hover { border-color: var(--accent); color: var(--accent); }
+  .family { padding: 30px 0 4px; scroll-margin-top: 12px; }
+  .family h2 { margin: 0 0 .15em; font-size: 1.55rem; letter-spacing: -.01em; }
+  .family h2 .n { color: var(--muted); font-size: .85rem; font-weight: 500; letter-spacing: 0; }
+  .family > p { margin: 0; color: var(--muted); max-width: 780px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; padding: 16px 0 0; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; }
+  .card h3 { margin: 0 0 .3em; font-size: 1.08rem; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+  .card h3 a { text-decoration: none; }
+  .card h3 .count { color: var(--muted); font-size: .78rem; font-weight: 500; white-space: nowrap; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .card p { margin: 0 0 .7em; font-size: .93rem; }
+  .card .links { margin-top: auto; font-size: .8rem; }
+  .card .links a { text-decoration: none; margin-right: 12px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 14px 0 0; }
+  .chips a {
+    text-decoration: none; font-size: .82rem; padding: 2px 9px; border-radius: 6px;
+    color: var(--fg); background: var(--chip); border: 1px solid var(--border);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .chips a:hover { border-color: var(--accent); color: var(--accent); }
+  .note { color: var(--muted); font-size: .92rem; max-width: 820px; }
+  footer { color: var(--muted); text-align: center; padding: 44px 0 56px; font-size: .9rem; border-top: 1px solid var(--border); margin-top: 44px; }
+  a { color: var(--accent); }
+</style>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script>
+  // Apply the saved theme before first paint to avoid a flash; "system" leaves no attribute.
+  (function(){var m=localStorage.getItem('theme');if(m&&m!=='system')document.documentElement.setAttribute('data-theme',m);})();
+</script>
+</head>
+<body>
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light, dark or system theme"><span id="theme-label">🖥️ System</span></button>
+
+  {{ $orgCount := 0 }}{{ $repoCount := 0 }}
+  {{ range .Site.Params.families }}{{ range .orgs }}{{ $orgCount = add $orgCount 1 }}{{ $repoCount = add $repoCount (int .repos) }}{{ end }}{{ end }}
+  {{ $gems := hugo.Data.ecosystem.gems }}
+  {{ $totalOrgs := add $orgCount (len $gems) }}
+  {{ $totalRepos := add $repoCount (int hugo.Data.ecosystem.gem_repos) }}
+
+  <header class="wrap">
+    <img class="logo" src="/img/logo.svg" alt="go-desktop logo" width="88" height="88">
+    <h1>go-desktop</h1>
+    <p class="tagline">A map of one <strong>pure-Go ecosystem</strong> — {{ $totalOrgs }} organisations
+      and {{ $totalRepos }} repositories of libraries that build a desktop, typeset a document, mount a
+      filesystem, boot a machine and run Ruby, with <strong>no C anywhere</strong>.</p>
+    <div class="pills">
+      <span class="pill">{{ $totalOrgs }} organisations</span>
+      <span class="pill"><code>CGO_ENABLED=0</code> throughout</span>
+      <span class="pill">amd64 · arm64 · riscv64 · loong64 · ppc64le · s390x</span>
+      <span class="pill">100% statement coverage as a CI gate</span>
+      <span class="pill">BSD-3-Clause</span>
+      <span class="pill">no <code>exec.Command</code> to a CLI</span>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="#desktop">Browse the map</a>
+      <a class="btn ghost" href="https://github.com/go-desktop">GitHub</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p class="lead">Every library here is written in Go and compiled with <code>CGO_ENABLED=0</code>.
+      That is not a stylistic preference: it is what makes one binary cross-compile to six
+      architectures, run inside a browser as WebAssembly, and boot on bare metal without a libc.
+      Where a good pure-Go library already exists it is used rather than rewritten; where the only
+      option was a C library behind cgo, the capability was rebuilt.</p>
+
+    <p class="lead">The ecosystem is deliberately split into <strong>one organisation per domain and
+      one repository per capability</strong>, so a program that needs an ext4 reader takes an ext4
+      reader and not a storage framework. What follows is the whole of it, grouped by what the code
+      does. Counts are the public repositories that hold code — brand, docs and landing repositories
+      are not counted.</p>
+
+    <nav class="toc">
+      {{ range .Site.Params.families }}<a href="#{{ .key }}">{{ .title }}</a>{{ end }}
+      <a href="#gems">Ruby gems</a>
+    </nav>
+
+    {{ range .Site.Params.families }}
+    <section class="family" id="{{ .key }}">
+      <h2>{{ .title }} <span class="n">· {{ len .orgs }} organisation{{ if ne (len .orgs) 1 }}s{{ end }}</span></h2>
+      <p>{{ .blurb }}</p>
+      <div class="grid">
+        {{ range .orgs }}
+        <article class="card">
+          <h3>
+            <a href="https://github.com/{{ .name }}"><code>{{ .name }}</code></a>
+            <span class="count">{{ .repos }} repo{{ if ne (int .repos) 1 }}s{{ end }}</span>
+          </h3>
+          <p>{{ .role }}</p>
+          <div class="links">
+            {{ if .site }}<a href="https://{{ .name }}.github.io/">Site</a>{{ end }}
+            {{ if .docs }}<a href="https://{{ .name }}.github.io/docs/">Docs</a>{{ end }}
+            <a href="https://github.com/{{ .name }}">Repositories</a>
+          </div>
+        </article>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    <section class="family" id="gems">
+      <h2>Ruby gems, one organisation each <span class="n">· {{ len $gems }} organisations</span></h2>
+      <p>The Ruby virtual machine is only useful with a library around it. Each gem it needs is
+        reimplemented in pure Go in its own <code>go-ruby-*</code> organisation — the standard
+        library, Rails and its dependencies, the testing stack, the Puppet stack, database drivers,
+        serialisation formats and template engines. Every one of them is byte-compared against MRI
+        where a byte comparison is meaningful.</p>
+      <div class="chips">
+        {{ range $gems }}<a href="https://github.com/go-ruby-{{ . }}" title="go-ruby-{{ . }}">{{ . }}</a>{{ end }}
+      </div>
+    </section>
+
+    <section class="family" id="standards">
+      <h2>What every repository is held to</h2>
+      <p class="note">The same conformance standard applies across all {{ $totalOrgs }} organisations,
+        which is why they can be read as one ecosystem rather than a pile of unrelated modules.</p>
+      <div class="grid">
+        <article class="card">
+          <h3><code>CGO_ENABLED=0</code></h3>
+          <p>No cgo, and no shelling out to a command-line tool in place of a library. A dependency is
+            a Go module or it is written. That is what keeps cross-compilation, <code>js/wasm</code>
+            and bare-metal targets available at once.</p>
+        </article>
+        <article class="card">
+          <h3>Six 64-bit targets</h3>
+          <p>Build and test on amd64, arm64, riscv64, loong64, ppc64le and s390x — native where
+            runners exist, under qemu-user otherwise. s390x is big-endian, which keeps every
+            on-disk and on-wire encoding honest.</p>
+        </article>
+        <article class="card">
+          <h3>100% statement coverage</h3>
+          <p>A CI gate, error branches included. A skipped test is not a passing one: jobs fail when
+            a toolchain is missing rather than turning green quietly.</p>
+        </article>
+        <article class="card">
+          <h3>Measured, not asserted</h3>
+          <p>Performance claims come with a benchmark against the reference implementation, and
+            correctness claims about a format come with a byte comparison against it. Decoders are
+            fuzzed.</p>
+        </article>
+        <article class="card">
+          <h3>One landing, one docs site</h3>
+          <p>Each organisation publishes a Hugo landing page at <code>&lt;org&gt;.github.io</code> and
+            versioned MkDocs Material documentation at <code>&lt;org&gt;.github.io/docs/</code>, with
+            the same brand and a light/dark/system theme toggle.</p>
+        </article>
+        <article class="card">
+          <h3>BSD-3-Clause</h3>
+          <p>Every repository, every organisation. Copyright is held by the authors of the
+            organisation it lives in.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="family" id="reserved">
+      <h2>Held, not yet built</h2>
+      <p class="note">These organisation names are reserved and empty. They are listed so the map has
+        no silent gaps — an empty organisation is not a shipped one.
+        {{ range $i, $r := hugo.Data.ecosystem.reserved }}{{ if $i }}, {{ end }}<a href="https://github.com/{{ $r }}"><code>{{ $r }}</code></a>{{ end }}.</p>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    BSD-3-Clause · <a href="https://github.com/go-desktop">github.com/go-desktop</a> ·
+    brand assets in <a href="https://github.com/go-desktop/brand">go-desktop/brand</a>
+  </footer>
+  <script>
+  (function(){
+    var order=['system','light','dark'], root=document.documentElement;
+    var labels={system:'🖥️ System',light:'☀️ Light',dark:'🌙 Dark'};
+    function apply(m){ if(m==='system'){root.removeAttribute('data-theme');}else{root.setAttribute('data-theme',m);} localStorage.setItem('theme',m); var el=document.getElementById('theme-label'); if(el)el.textContent=labels[m]; }
+    var mode=localStorage.getItem('theme')||'system'; apply(mode);
+    var btn=document.getElementById('theme-toggle');
+    if(btn) btn.addEventListener('click',function(){ mode=order[(order.indexOf(mode)+1)%order.length]; apply(mode); });
+  })();
+  </script>
+</body>
+</html>

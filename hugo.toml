@@ -1,0 +1,629 @@
+baseURL = "https://go-desktop.github.io/"
+title = "go-desktop"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+# Generated from the live GitHub organisation list — see data/ecosystem.toml for the
+# per-gem organisations and the names held but not yet built.
+
+[[params.families]]
+  key = "desktop"
+  title = "Desktop & widgets"
+  blurb = "One widget toolkit, every surface it paints on, and the platform plumbing a real desktop needs."
+  [[params.families.orgs]]
+    name = "go-widgets"
+    repos = 16
+    site = true
+    docs = false
+    role = "The widget toolkit and every surface it paints on: the painter seam, MVVM, a declarative skin engine, a terminal back-end, a native window on X11, Wayland, Cocoa and Win32, a real Android APK, and a desktop shell."
+  [[params.families.orgs]]
+    name = "go-freedesktop"
+    repos = 8
+    site = true
+    docs = true
+    role = "freedesktop.org integration — .desktop entries, icon themes, shared MIME info, application associations, the menu tree, desktop notifications and Secret Service."
+  [[params.families.orgs]]
+    name = "go-iconoir"
+    repos = 1
+    site = true
+    docs = false
+    role = "The whole Iconoir set — 1,671 SVGs embedded and rendered to anti-aliased coverage masks for the toolkit painter."
+  [[params.families.orgs]]
+    name = "go-thumbnail"
+    repos = 1
+    site = true
+    docs = true
+    role = "The freedesktop Thumbnail Managing Standard cache."
+  [[params.families.orgs]]
+    name = "go-keyring"
+    repos = 1
+    site = true
+    docs = false
+    role = "One secret store over macOS Keychain, Windows Credential Manager and Linux Secret Service — no cgo, no CLI exec."
+  [[params.families.orgs]]
+    name = "go-macos"
+    repos = 3
+    site = true
+    docs = false
+    role = "The macOS foundation: the shared Objective-C runtime bridge over purego, plus Keychain and notifications."
+  [[params.families.orgs]]
+    name = "go-mswin"
+    repos = 2
+    site = true
+    docs = false
+    role = "The Windows foundation: Win32 bindings and WinRT interop on combase — peer of go-macos/objc."
+  [[params.families.orgs]]
+    name = "wasmdesk"
+    repos = 7
+    site = true
+    docs = false
+    role = "A desktop in the browser — a Wayland-inspired compositor and window manager, a dock, a login portal, OCI app packaging and a coreutils suite."
+
+[[params.families]]
+  key = "graphics"
+  title = "Graphics, images & media"
+  blurb = "The 2D socle everything above draws through, and the pixels and frames it moves."
+  [[params.families.orgs]]
+    name = "go-gfx"
+    repos = 1
+    site = true
+    docs = true
+    role = "The shared 2D socle: an anti-aliased vector rasteriser, a raster surface, colour, geometry, resampling, and SVG to bitmap."
+  [[params.families.orgs]]
+    name = "go-images"
+    repos = 1
+    site = true
+    docs = true
+    role = "Image processing at scikit-image scope."
+  [[params.families.orgs]]
+    name = "go-avkit"
+    repos = 1
+    site = true
+    docs = false
+    role = "An audio/video toolkit — MP4/ISO-BMFF and Matroska/WebM demuxing."
+
+[[params.families]]
+  key = "docs"
+  title = "Documents, typesetting & fonts"
+  blurb = "Turning a document into pages: fonts, breaking, shaping, TeX, PDF, and one rich-document model."
+  [[params.families.orgs]]
+    name = "go-tex"
+    repos = 5
+    site = true
+    docs = true
+    role = "A TeX engine — mouth and gullet, math mode to SVG, a PDF-figure rasteriser, and a fetcher that gets a document the class files it asks for without redistributing any."
+  [[params.families.orgs]]
+    name = "go-typeset"
+    repos = 3
+    site = false
+    docs = false
+    role = "The typesetting algorithms on their own, with no TeX vocabulary in the API: Knuth-Plass line breaking, Liang hyphenation, the Unicode bidirectional algorithm."
+  [[params.families.orgs]]
+    name = "go-opentype"
+    repos = 3
+    site = true
+    docs = true
+    role = "The font format: TrueType/OpenType parsing and anti-aliased rasterisation, a HarfBuzz-lite complex-text shaper, and legible fonts ready to import."
+  [[params.families.orgs]]
+    name = "go-synctex"
+    repos = 1
+    site = true
+    docs = true
+    role = "TeX's SyncTeX — the source-to-PDF correspondence, both ways."
+  [[params.families.orgs]]
+    name = "go-pdfkit"
+    repos = 1
+    site = true
+    docs = true
+    role = "A PDF 1.7 writer: font subsetting and embedding for TrueType and CFF, graphics, images, shaped text."
+  [[params.families.orgs]]
+    name = "go-richdoc"
+    repos = 3
+    site = false
+    docs = false
+    role = "One rich-document model, and the converters that read and write it."
+  [[params.families.orgs]]
+    name = "go-odf"
+    repos = 1
+    site = false
+    docs = false
+    role = "OpenDocument Text, in and out of the richdoc model."
+  [[params.families.orgs]]
+    name = "go-rtf"
+    repos = 1
+    site = false
+    docs = false
+    role = "RTF, in and out of the richdoc model."
+
+[[params.families]]
+  key = "markup"
+  title = "Markup, templating & text"
+  blurb = "Reading and writing the formats documents arrive in, and the engines that scan them."
+  [[params.families.orgs]]
+    name = "go-commonmark"
+    repos = 1
+    site = true
+    docs = true
+    role = "Strict CommonMark 0.31.2 to HTML — all 652 spec examples."
+  [[params.families.orgs]]
+    name = "go-kramdown"
+    repos = 1
+    site = true
+    docs = true
+    role = "kramdown-flavoured Markdown, as Jekyll uses it."
+  [[params.families.orgs]]
+    name = "go-nokogiri"
+    repos = 1
+    site = true
+    docs = true
+    role = "HTML and XML: parse, query, mutate, serialise."
+  [[params.families.orgs]]
+    name = "go-xslt"
+    repos = 1
+    site = true
+    docs = true
+    role = "XSLT transformation."
+  [[params.families.orgs]]
+    name = "go-scss"
+    repos = 1
+    site = true
+    docs = false
+    role = "A Sass/SCSS compiler with Dart-Sass-compatible output — the engine behind the Ruby sass gem."
+  [[params.families.orgs]]
+    name = "go-mustache"
+    repos = 1
+    site = true
+    docs = true
+    role = "Logic-less Mustache templating, spec-faithful."
+  [[params.families.orgs]]
+    name = "go-liquid"
+    repos = 1
+    site = true
+    docs = true
+    role = "Shopify's Liquid template engine, gem-faithful."
+  [[params.families.orgs]]
+    name = "go-rouge"
+    repos = 1
+    site = true
+    docs = true
+    role = "A Rouge/Pygments-class syntax highlighter — per-language lexers, token types, named themes."
+  [[params.families.orgs]]
+    name = "go-regexp"
+    repos = 1
+    site = true
+    docs = true
+    role = "An Onigmo engine shaped like the standard library's regexp, with the lookaround and backreferences RE2 cannot do."
+  [[params.families.orgs]]
+    name = "go-datetime"
+    repos = 1
+    site = true
+    docs = false
+    role = "A lenient parser for the dates people actually write."
+
+[[params.families]]
+  key = "web"
+  title = "Web & transports"
+  blurb = "Rendering a page without a browser, and carrying gRPC where gRPC does not go."
+  [[params.families.orgs]]
+    name = "go-webengine"
+    repos = 2
+    site = true
+    docs = true
+    role = "A headless web engine: HTML and CSS laid out and painted to an image, with no Chromium — plus a service that streams those frames to a thin client."
+  [[params.families.orgs]]
+    name = "go-browserhttp"
+    repos = 1
+    site = true
+    docs = true
+    role = "An http.Client that presents a Chrome TLS fingerprint."
+  [[params.families.orgs]]
+    name = "go-lsp-bridge"
+    repos = 1
+    site = true
+    docs = true
+    role = "A WebSocket-to-stdio bridge for JSON-RPC language-server traffic."
+  [[params.families.orgs]]
+    name = "grpc-transports"
+    repos = 5
+    site = true
+    docs = true
+    role = "gRPC where it is not supposed to go: over SSH, WireGuard, vsock, WebSocket and WebRTC."
+
+[[params.families]]
+  key = "collab"
+  title = "Realtime collaboration"
+  blurb = "Many people, one document, no server deciding who won."
+  [[params.families.orgs]]
+    name = "go-crdt"
+    repos = 2
+    site = true
+    docs = true
+    role = "A replicated text document and the service that carries it between the people editing it — the same merge logic on the server and in the browser, via js/wasm."
+  [[params.families.orgs]]
+    name = "go-yjs-relay"
+    repos = 1
+    site = true
+    docs = true
+    role = "A Yjs y-websocket relay hub, transport-agnostic."
+
+[[params.families]]
+  key = "ruby"
+  title = "Ruby, in Go"
+  blurb = "A Ruby virtual machine, its object model, and one organisation per gem it needs."
+  [[params.families.orgs]]
+    name = "go-embedded-ruby"
+    repos = 1
+    site = true
+    docs = true
+    role = "The Ruby virtual machine — YARV bytecode, the object model, the core library, and the rbgo interpreter."
+  [[params.families.orgs]]
+    name = "go-composites"
+    repos = 31
+    site = true
+    docs = true
+    role = "Ruby's numeric tower, collections, time and dates as composition-oriented building blocks: Result-based, Null-Object, never nil."
+  [[params.families.orgs]]
+    name = "go-ruby-widgets"
+    repos = 3
+    site = true
+    docs = true
+    role = "MVVM, widgets and a terminal toolkit, addressable from Ruby."
+  [[params.families.orgs]]
+    name = "go-vet-analyzers"
+    repos = 2
+    site = true
+    docs = true
+    role = "go vet analyzers that make the ecosystem's invariants a compile-time matter."
+
+[[params.families]]
+  key = "numerics"
+  title = "CPU, SIMD & numerics"
+  blurb = "Getting the machine's width out of pure Go, on all six 64-bit targets."
+  [[params.families.orgs]]
+    name = "go-asmgen"
+    repos = 1
+    site = true
+    docs = true
+    role = "Ergonomic generation of Go-compatible Plan 9 assembly for every 64-bit Go target."
+  [[params.families.orgs]]
+    name = "go-simd"
+    repos = 22
+    site = true
+    docs = true
+    role = "SIMD kernels on all six of Go's 64-bit targets — codecs, hashes, string scans, bitsets, float and int8 dot products."
+  [[params.families.orgs]]
+    name = "go-ndarray"
+    repos = 1
+    site = true
+    docs = true
+    role = "A numpy-shaped n-dimensional array, with GEMM at vecLib parity."
+  [[params.families.orgs]]
+    name = "go-fft"
+    repos = 1
+    site = true
+    docs = true
+    role = "Fast Fourier transforms at numpy and scipy accuracy, without FFTW."
+
+[[params.families]]
+  key = "compress"
+  title = "Compression, delta & erasure"
+  blurb = "Making bytes smaller, sending only what changed, and surviving what is lost."
+  [[params.families.orgs]]
+    name = "go-compressions"
+    repos = 8
+    site = true
+    docs = true
+    role = "LZFSE, LZ4, deflate and BLAKE3, with the CLIs that go with them."
+  [[params.families.orgs]]
+    name = "go-deltasync"
+    repos = 6
+    site = true
+    docs = true
+    role = "Delta transfer: zsync2, rdiff, zchunk, vcdiff, bita — and the one content-defined chunker they all import."
+  [[params.families.orgs]]
+    name = "go-erasure"
+    repos = 2
+    site = true
+    docs = true
+    role = "Erasure coding: Reed-Solomon over GF(2^16), and the Mojette transform."
+
+[[params.families]]
+  key = "storage"
+  title = "Storage, volumes & filesystems"
+  blurb = "From a block device to a mounted filesystem, without a C library anywhere."
+  [[params.families.orgs]]
+    name = "go-volumes"
+    repos = 9
+    site = true
+    docs = true
+    role = "The block layer — a device contract, NBD, pools, replicas, S3, an OCI image as a block device, GPT and MBR, and parse-hardening guards."
+  [[params.families.orgs]]
+    name = "go-filesystems"
+    repos = 17
+    site = true
+    docs = true
+    role = "Filesystem-format drivers — ext4, xfs, btrfs, zfs, apfs, ntfs, exfat, fat32, iso9660, squashfs and more — plus UEFI variable management and a format prober."
+  [[params.families.orgs]]
+    name = "go-diskimages"
+    repos = 6
+    site = true
+    docs = true
+    role = "Disk-image formats: qcow2, raw, dmg, tart-oci, in either direction."
+  [[params.families.orgs]]
+    name = "go-fsctl"
+    repos = 6
+    site = true
+    docs = true
+    role = "Linux kernel ioctl wrappers — zfs, btrfs, loop, device-mapper, block, copy-on-write clones."
+  [[params.families.orgs]]
+    name = "go-fde"
+    repos = 4
+    site = true
+    docs = true
+    role = "Full-disk encryption: LUKS, APFS, and the plumbing that opens them."
+  [[params.families.orgs]]
+    name = "go-encryptions"
+    repos = 3
+    site = true
+    docs = true
+    role = "The modes underneath: CCM, XTS, ZFS crypto."
+
+[[params.families]]
+  key = "boot"
+  title = "Firmware, boot & trust"
+  blurb = "What runs before the kernel, and how you prove what ran."
+  [[params.families.orgs]]
+    name = "go-tpm2"
+    repos = 8
+    site = true
+    docs = true
+    role = "TPM 2.0 end to end: transports, the command layer, EFI_TCG2, measured boot, event-log replay and remote attestation."
+  [[params.families.orgs]]
+    name = "go-coff"
+    repos = 4
+    site = true
+    docs = true
+    role = "PE/COFF for UEFI — an object-to-EFI linker, a signing and conversion CLI, and a self-extracting EFI packer."
+  [[params.families.orgs]]
+    name = "go-bootloaders"
+    repos = 2
+    site = true
+    docs = true
+    role = "GRUB and systemd-boot tooling, composed on the storage, UEFI and TPM stacks rather than reimplementing them."
+  [[params.families.orgs]]
+    name = "cloud-boot"
+    repos = 7
+    site = true
+    docs = true
+    role = "Booting the machine: a TamaGo UEFI payload, a unified kernel image, an init, kernels, ISOs, SEV-SNP."
+  [[params.families.orgs]]
+    name = "nano-container-linux"
+    repos = 7
+    site = true
+    docs = false
+    role = "A minimal container host — OCI initrd and PXE boot, a DNS daemon, an OpenPubKey agent."
+
+[[params.families]]
+  key = "supply"
+  title = "Packaging & supply chain"
+  blurb = "Building every dependency from source, signing it, and saying where it came from."
+  [[params.families.orgs]]
+    name = "go-pkgx"
+    repos = 8
+    site = true
+    docs = true
+    role = "A pure-Go pkgx: the package manager, the bottle installer, the bk recipe builder, and the CI factory that publishes signed bottles."
+  [[params.families.orgs]]
+    name = "go-attest"
+    repos = 2
+    site = true
+    docs = false
+    role = "SPDX and CycloneDX SBOMs, SLSA provenance, and Ed25519 signing that is minisign- and cosign-interoperable from one keypair."
+  [[params.families.orgs]]
+    name = "go-versions"
+    repos = 1
+    site = true
+    docs = false
+    role = "Loose, pkgx-compatible semantic versions and ranges, CalVer included."
+
+[[params.families]]
+  key = "cloud"
+  title = "Virtualisation, cloud & network"
+  blurb = "microVMs, guest drivers, supervision, coordination and the network between them."
+  [[params.families.orgs]]
+    name = "openweft"
+    repos = 70
+    site = true
+    docs = false
+    role = "weft — a Go-native microVM cloud: drivers, network, block storage, HA services, runners, clients, native apps, and the loom editor built on it."
+  [[params.families.orgs]]
+    name = "go-virtio"
+    repos = 13
+    site = true
+    docs = true
+    role = "Guest virtio drivers: net, blk, gpu with virgl and Venus, console, rng, vsock, balloon, fs, sound, input."
+  [[params.families.orgs]]
+    name = "go-proc"
+    repos = 2
+    site = true
+    docs = true
+    role = "A PID-1 subreaper and process supervisor, and the restart state machine that decides when to try again."
+  [[params.families.orgs]]
+    name = "go-coord"
+    repos = 1
+    site = true
+    docs = true
+    role = "Cross-host coordination on etcd v3: host liveness, watches, leader election."
+  [[params.families.orgs]]
+    name = "go-net-dhcp"
+    repos = 1
+    site = true
+    docs = true
+    role = "A dependency-free DHCPv4 server library."
+  [[params.families.orgs]]
+    name = "go-net-health"
+    repos = 1
+    site = true
+    docs = true
+    role = "Active health probes — stateless TCP and HTTP checks folded into a rolling verdict."
+  [[params.families.orgs]]
+    name = "cloud-pool-managers"
+    repos = 1
+    site = true
+    docs = true
+    role = "VM pool management."
+  [[params.families.orgs]]
+    name = "claimward"
+    repos = 6
+    site = true
+    docs = true
+    role = "A WireGuard VPN with OIDC: the server, the client, and desktop apps for macOS, Linux and Windows."
+
+[[params.families]]
+  key = "config"
+  title = "Configuration management"
+  blurb = "The Puppet stack, in Go, without a Ruby runtime."
+  [[params.families.orgs]]
+    name = "go-puppet"
+    repos = 1
+    site = true
+    docs = true
+    role = "The Puppet language and its catalogue compiler."
+  [[params.families.orgs]]
+    name = "go-pcore"
+    repos = 1
+    site = true
+    docs = true
+    role = "Puppet's Pcore type system: type calculus, parser, value model, assignability lattice."
+  [[params.families.orgs]]
+    name = "go-puppetdb"
+    repos = 1
+    site = true
+    docs = true
+    role = "PuppetDB."
+  [[params.families.orgs]]
+    name = "go-puppet-bolt"
+    repos = 1
+    site = true
+    docs = true
+    role = "Bolt — task and plan orchestration over SSH and WinRM."
+  [[params.families.orgs]]
+    name = "go-facter"
+    repos = 1
+    site = true
+    docs = true
+    role = "Fact collection."
+  [[params.families.orgs]]
+    name = "go-hiera"
+    repos = 1
+    site = true
+    docs = true
+    role = "Hierarchical data lookup."
+  [[params.families.orgs]]
+    name = "go-eyaml"
+    repos = 1
+    site = true
+    docs = true
+    role = "eyaml — encrypted values inside Hiera data."
+  [[params.families.orgs]]
+    name = "go-hocon"
+    repos = 1
+    site = true
+    docs = true
+    role = "HOCON configuration."
+  [[params.families.orgs]]
+    name = "go-augeas"
+    repos = 1
+    site = true
+    docs = true
+    role = "The Augeas engine: a config tree, path expressions and lenses."
+
+[[params.families]]
+  key = "social"
+  title = "News, social & feeds"
+  blurb = "One reader, and a client per source it reads."
+  [[params.families.orgs]]
+    name = "go-news-reader"
+    repos = 1
+    site = true
+    docs = true
+    role = "A multi-source news and social aggregator with a go-widgets interface — Reddit, RSS, Hacker News, Usenet, Mastodon, Lemmy, Bluesky and more in one reader."
+  [[params.families.orgs]]
+    name = "go-syndication"
+    repos = 1
+    site = true
+    docs = true
+    role = "RSS, Atom and JSON Feed: parse and fetch."
+  [[params.families.orgs]]
+    name = "go-newsgroups"
+    repos = 5
+    site = true
+    docs = true
+    role = "Usenet, whole: NNTP, yEnc, Newznab, NZB, PAR2."
+  [[params.families.orgs]]
+    name = "go-reddit"
+    repos = 2
+    site = true
+    docs = true
+    role = "A Reddit read client, and a reader built on it."
+  [[params.families.orgs]]
+    name = "go-mastodon"
+    repos = 1
+    site = true
+    docs = true
+    role = "A Mastodon read client."
+  [[params.families.orgs]]
+    name = "go-lemmy"
+    repos = 1
+    site = true
+    docs = true
+    role = "A Lemmy read client."
+  [[params.families.orgs]]
+    name = "go-hackernews"
+    repos = 1
+    site = true
+    docs = true
+    role = "A Hacker News read client."
+  [[params.families.orgs]]
+    name = "go-atproto"
+    repos = 1
+    site = true
+    docs = true
+    role = "A Bluesky / AT Protocol read client."
+  [[params.families.orgs]]
+    name = "go-birdsite"
+    repos = 1
+    site = true
+    docs = true
+    role = "A best-effort read client for public Twitter/X timelines."
+  [[params.families.orgs]]
+    name = "go-instagram"
+    repos = 1
+    site = true
+    docs = true
+    role = "A best-effort read client for public Instagram profiles."
+  [[params.families.orgs]]
+    name = "go-tiktok"
+    repos = 1
+    site = true
+    docs = true
+    role = "A best-effort read client for public TikTok profiles."
+[[params.families]]
+  key = "games"
+  title = "Games"
+  blurb = "Two engines hand-ported to pure Go, one of them onto bare metal."
+  [[params.families.orgs]]
+    name = "go-quake1"
+    repos = 1
+    site = true
+    docs = true
+    role = "Quake 1, hand-ported from tyrquake, with a bare-metal target."
+  [[params.families.orgs]]
+    name = "go-doom"
+    repos = 1
+    site = true
+    docs = true
+    role = "DOOM, hand-ported through the gore lineage, with a TamaGo bare-metal back-end."
+
