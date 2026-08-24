@@ -44,7 +44,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "One secret store over macOS Keychain, Windows Credential Manager and Linux Secret Service — no cgo, no CLI exec."
   [[params.families.orgs]]
     name = "go-macos"
-    repos = 3
+    repos = 6
     site = true
     docs = false
     role = "The macOS foundation: the shared Objective-C runtime bridge over purego, plus Keychain and notifications."
@@ -83,6 +83,24 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     site = true
     docs = false
     role = "An audio/video toolkit — MP4/ISO-BMFF and Matroska/WebM demuxing."
+  [[params.families.orgs]]
+    name = "go-streamkit"
+    repos = 1
+    site = false
+    docs = false
+    role = "Site-agnostic transport for streaming media: a retrying, rate-limited HTTP client, an HLS parser and an MPEG-DASH manifest reader."
+  [[params.families.orgs]]
+    name = "go-extractors"
+    repos = 1
+    site = false
+    docs = false
+    role = "A plugin framework for media extractors — standalone plugin executables answer what is at a URL and what can be downloaded from it."
+  [[params.families.orgs]]
+    name = "go-xrkit"
+    repos = 2
+    site = true
+    docs = true
+    role = "Immersive video on XR glasses: head orientation, stereo frame packing, flat, equirectangular and fisheye projection, and a player that drives the glasses' own display."
 
 [[params.families]]
   key = "docs"
@@ -214,7 +232,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "A headless web engine: HTML and CSS laid out and painted to an image, with no Chromium — plus a service that streams those frames to a thin client."
   [[params.families.orgs]]
     name = "go-browserhttp"
-    repos = 1
+    repos = 2
     site = true
     docs = true
     role = "An http.Client that presents a Chrome TLS fingerprint."
@@ -610,6 +628,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     site = true
     docs = true
     role = "A best-effort read client for public TikTok profiles."
+
 [[params.families]]
   key = "games"
   title = "Games"

@@ -215,5 +215,5 @@ reserved = [
   "go-ruby-tiktok",
 ]
 
-# Public repositories holding code across the 196 gem organisations.
-gem_repos = 197
+# Public repositories holding code across the 195 gem organisations.
+gem_repos = 196
