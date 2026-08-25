@@ -14,16 +14,16 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
   blurb = "One widget toolkit, every surface it paints on, and the platform plumbing a real desktop needs."
   [[params.families.orgs]]
     name = "go-widgets"
-    repos = 16
+    repos = 18
     site = true
     docs = false
     role = "The widget toolkit and every surface it paints on: the painter seam, MVVM, a declarative skin engine, a terminal back-end, a native window on X11, Wayland, Cocoa and Win32, a real Android APK, and a desktop shell."
   [[params.families.orgs]]
     name = "go-freedesktop"
-    repos = 8
+    repos = 10
     site = true
     docs = true
-    role = "freedesktop.org integration — .desktop entries, icon themes, shared MIME info, application associations, the menu tree, desktop notifications and Secret Service."
+    role = "freedesktop.org integration — .desktop entries, icon themes, shared MIME info, application associations, the menu tree, desktop notifications and Secret Service — over an owned X11 protocol core that also serves screen capture and the toolkit's window back-end."
   [[params.families.orgs]]
     name = "go-iconoir"
     repos = 1
@@ -44,16 +44,16 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "One secret store over macOS Keychain, Windows Credential Manager and Linux Secret Service — no cgo, no CLI exec."
   [[params.families.orgs]]
     name = "go-macos"
-    repos = 6
+    repos = 10
     site = true
     docs = false
-    role = "The macOS foundation: the shared Objective-C runtime bridge over purego, plus Keychain and notifications."
+    role = "The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, Keychain, notifications, IOKit HID, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto."
   [[params.families.orgs]]
     name = "go-mswin"
-    repos = 2
+    repos = 3
     site = true
     docs = false
-    role = "The Windows foundation: Win32 bindings and WinRT interop on combase — peer of go-macos/objc."
+    role = "The Windows foundation: Win32 bindings and WinRT interop on combase — peer of go-macos/objc — plus DXGI Desktop Duplication and GDI screen capture built on them."
   [[params.families.orgs]]
     name = "wasmdesk"
     repos = 7
@@ -67,7 +67,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
   blurb = "The 2D socle everything above draws through, and the pixels and frames it moves."
   [[params.families.orgs]]
     name = "go-gfx"
-    repos = 1
+    repos = 2
     site = true
     docs = true
     role = "The shared 2D socle: an anti-aliased vector rasteriser, a raster surface, colour, geometry, resampling, and SVG to bitmap."
@@ -97,10 +97,10 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "A plugin framework for media extractors — standalone plugin executables answer what is at a URL and what can be downloaded from it."
   [[params.families.orgs]]
     name = "go-xrkit"
-    repos = 2
+    repos = 4
     site = true
     docs = true
-    role = "Immersive video on XR glasses: head orientation, stereo frame packing, flat, equirectangular and fisheye projection, and a player that drives the glasses' own display."
+    role = "XR glasses: head orientation, stereo frame packing, flat, equirectangular and fisheye projection, a 360° screen ribbon, a graded catalogue of what each headset can show — plus a player, a virtual desktop on the ribbon, and Android capture."
 
 [[params.families]]
   key = "docs"
@@ -132,7 +132,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "TeX's SyncTeX — the source-to-PDF correspondence, both ways."
   [[params.families.orgs]]
     name = "go-pdfkit"
-    repos = 1
+    repos = 7
     site = true
     docs = true
     role = "A PDF 1.7 writer: font subsetting and embedding for TrueType and CFF, graphics, images, shaped text."
