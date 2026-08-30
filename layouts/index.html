@@ -221,6 +221,20 @@
       <p class="note">These organisation names are reserved and empty. They are listed so the map has
         no silent gaps — an empty organisation is not a shipped one.
         {{ range $i, $r := hugo.Data.ecosystem.reserved }}{{ if $i }}, {{ end }}<a href="https://github.com/{{ $r }}"><code>{{ $r }}</code></a>{{ end }}.</p>
+
+      {{ with hugo.Data.ecosystem.superseded }}
+      <h2 style="margin-top:1.6em">Archived, and where it went</h2>
+      <p class="note">Built, then retired because the code moved. Listed rather than removed, because
+        a reader who knows the old name has to be able to find the new one. Counted nowhere.</p>
+      <div class="grid">
+        {{ range . }}
+        <article class="card">
+          <h3><a href="https://github.com/{{ .org }}"><code>{{ .org }}</code></a></h3>
+          <p>Replaced by {{ .by | markdownify }}</p>
+        </article>
+        {{ end }}
+      </div>
+      {{ end }}
     </section>
   </main>
 

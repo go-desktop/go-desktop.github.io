@@ -25,17 +25,11 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     docs = true
     role = "freedesktop.org integration — .desktop entries, icon themes, shared MIME info, application associations, the menu tree, desktop notifications and Secret Service — over an owned X11 protocol core that also serves screen capture and the toolkit's window back-end."
   [[params.families.orgs]]
-    name = "go-iconoir"
-    repos = 1
-    site = true
-    docs = false
-    role = "The whole Iconoir set — 1,671 SVGs embedded and rendered to anti-aliased coverage masks for the toolkit painter."
-  [[params.families.orgs]]
     name = "go-icons"
     repos = 6
     site = true
     docs = false
-    role = "Icon and logo packs as embedded pure-Go SVG data — Simple Icons brand marks, Devicon, Material and Seti file types, vscode-icons, and Iconoir. One repository per pack, so a program embeds the set it draws and not the other five. Distinct from go-iconoir, which rasterises Iconoir to coverage masks for the painter: take this one for the SVG, that one to draw a button glyph."
+    role = "Icon and logo packs as embedded pure-Go SVG data — Simple Icons brand marks, Devicon, Material and Seti file types, vscode-icons, and Iconoir. One repository per pack, so a program embeds the set it draws and not the other five; the drawing itself is go-gfx's `svg` package. This pair replaced the archived go-iconoir."
   [[params.families.orgs]]
     name = "go-thumbnail"
     repos = 1
