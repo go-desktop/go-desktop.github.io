@@ -216,4 +216,4 @@ reserved = [
 ]
 
 # Public repositories holding code across the 195 gem organisations.
-gem_repos = 196
+gem_repos = 195

@@ -31,6 +31,12 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     docs = false
     role = "The whole Iconoir set — 1,671 SVGs embedded and rendered to anti-aliased coverage masks for the toolkit painter."
   [[params.families.orgs]]
+    name = "go-icons"
+    repos = 6
+    site = true
+    docs = false
+    role = "Icon and logo packs as embedded pure-Go SVG data — Simple Icons brand marks, Devicon, Material and Seti file types, vscode-icons, and Iconoir. One repository per pack, so a program embeds the set it draws and not the other five. Distinct from go-iconoir, which rasterises Iconoir to coverage masks for the painter: take this one for the SVG, that one to draw a button glyph."
+  [[params.families.orgs]]
     name = "go-thumbnail"
     repos = 1
     site = true
@@ -44,10 +50,10 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "One secret store over macOS Keychain, Windows Credential Manager and Linux Secret Service — no cgo, no CLI exec."
   [[params.families.orgs]]
     name = "go-macos"
-    repos = 10
+    repos = 20
     site = true
     docs = false
-    role = "The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, Keychain, notifications, IOKit HID, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto."
+    role = "The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, Keychain and Touch ID, notifications and menu-bar items, accessibility, global hotkeys, login items and launch agents, IOKit HID, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto."
   [[params.families.orgs]]
     name = "go-mswin"
     repos = 3
@@ -132,16 +138,22 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "TeX's SyncTeX — the source-to-PDF correspondence, both ways."
   [[params.families.orgs]]
     name = "go-pdfkit"
-    repos = 7
+    repos = 11
     site = true
     docs = true
-    role = "A PDF 1.7 writer: font subsetting and embedding for TrueType and CFF, graphics, images, shaped text."
+    role = "The PDF stack, both directions: a 1.7 writer with TrueType and CFF subsetting, a reader and renderer, AcroForm fields, text and structure extraction, a conformance suite judged against poppler, and a co-editable reader application built on all of it."
   [[params.families.orgs]]
-    name = "go-richdoc"
-    repos = 3
+    name = "go-docutils"
+    repos = 1
     site = false
     docs = false
-    role = "One rich-document model, and the converters that read and write it."
+    role = "A reStructuredText engine — docutils' core in pure Go: the parser and the doctree it produces, which the LaTeX and PDF path is built on."
+  [[params.families.orgs]]
+    name = "go-richdoc"
+    repos = 4
+    site = false
+    docs = false
+    role = "One rich-document model, and the converters that read and write it — Markdown, LaTeX and reStructuredText."
   [[params.families.orgs]]
     name = "go-odf"
     repos = 1
