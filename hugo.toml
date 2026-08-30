@@ -29,7 +29,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     repos = 6
     site = true
     docs = false
-    role = "Icon and logo packs as embedded pure-Go SVG data — Simple Icons brand marks, Devicon, Material and Seti file types, vscode-icons, and Iconoir. One repository per pack, so a program embeds the set it draws and not the other five; the drawing itself is go-gfx's `svg` package. This pair replaced the archived go-iconoir."
+    role = "Icon and logo packs as embedded pure-Go SVG data — Simple Icons brand marks, Devicon, Material and Seti file types, vscode-icons, and Iconoir. One repository per pack, so a program embeds the set it draws and not the other five; the drawing itself is go-gfx's `svg` package."
   [[params.families.orgs]]
     name = "go-thumbnail"
     repos = 1
@@ -44,7 +44,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "One secret store over macOS Keychain, Windows Credential Manager and Linux Secret Service — no cgo, no CLI exec."
   [[params.families.orgs]]
     name = "go-macos"
-    repos = 20
+    repos = 21
     site = true
     docs = false
     role = "The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, Keychain and Touch ID, notifications and menu-bar items, accessibility, global hotkeys, login items and launch agents, IOKit HID, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto."

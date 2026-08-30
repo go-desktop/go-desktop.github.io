@@ -215,10 +215,5 @@ reserved = [
   "go-ruby-tiktok",
 ]
 
-# Archived organisations, each followed by what replaced it.
-superseded = [
-  { org = "go-iconoir", by = "[`go-icons/iconoir`](https://github.com/go-icons/iconoir) for the icon data, and [`go-gfx/gfx`](https://github.com/go-gfx/gfx)'s `svg` package for turning it into pixels. Splitting the two is what made the rasteriser reusable for every other pack rather than only for Iconoir." },
-]
-
 # Public repositories holding code across the 195 gem organisations.
 gem_repos = 195
