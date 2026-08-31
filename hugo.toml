@@ -14,10 +14,10 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
   blurb = "One widget toolkit, every surface it paints on, and the platform plumbing a real desktop needs."
   [[params.families.orgs]]
     name = "go-widgets"
-    repos = 18
+    repos = 19
     site = true
     docs = false
-    role = "The widget toolkit and every surface it paints on: the painter seam, MVVM, a declarative skin engine, a terminal back-end, a native window on X11, Wayland, Cocoa and Win32, a real Android APK, and a desktop shell."
+    role = "The widget toolkit and every surface it paints on: the painter seam, MVVM, a declarative skin engine, a terminal back-end, a native window on X11, Wayland, Cocoa and Win32, application lifecycle with a system tray, a real Android APK, and a desktop shell."
   [[params.families.orgs]]
     name = "go-freedesktop"
     repos = 10
@@ -44,10 +44,10 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "One secret store over macOS Keychain, Windows Credential Manager and Linux Secret Service — no cgo, no CLI exec."
   [[params.families.orgs]]
     name = "go-macos"
-    repos = 21
+    repos = 23
     site = true
     docs = false
-    role = "The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, Keychain and Touch ID, notifications and menu-bar items, accessibility, global hotkeys, login items and launch agents, IOKit HID, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto."
+    role = "The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, real AppKit controls embedded in a Go-painted window, Keychain and Touch ID, notifications and menu-bar items, accessibility, global hotkeys, login items and launch agents, IOKit HID, DiskArbitration, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto."
   [[params.families.orgs]]
     name = "go-mswin"
     repos = 3
@@ -132,16 +132,16 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "TeX's SyncTeX — the source-to-PDF correspondence, both ways."
   [[params.families.orgs]]
     name = "go-pdfkit"
-    repos = 11
+    repos = 12
     site = true
     docs = true
-    role = "The PDF stack, both directions: a 1.7 writer with TrueType and CFF subsetting, a reader and renderer, AcroForm fields, text and structure extraction, a conformance suite judged against poppler, and a co-editable reader application built on all of it."
+    role = "The PDF stack, both directions: a 1.7 writer with TrueType and CFF subsetting, a reader and renderer, AcroForm and XFA form fields, text and structure extraction, a conformance suite judged against poppler, and a co-editable reader application built on all of it."
   [[params.families.orgs]]
     name = "go-docutils"
-    repos = 1
+    repos = 2
     site = false
     docs = false
-    role = "A reStructuredText engine — docutils' core in pure Go: the parser and the doctree it produces, which the LaTeX and PDF path is built on."
+    role = "reStructuredText both ways: docutils' core in pure Go — the parser and the doctree the LaTeX and PDF path is built on — and an extractor that renders a Go package's own API documentation as reST to feed it."
   [[params.families.orgs]]
     name = "go-richdoc"
     repos = 4
@@ -365,10 +365,10 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "The block layer — a device contract, NBD, pools, replicas, S3, an OCI image as a block device, GPT and MBR, and parse-hardening guards."
   [[params.families.orgs]]
     name = "go-filesystems"
-    repos = 17
+    repos = 20
     site = true
     docs = true
-    role = "Filesystem-format drivers — ext4, xfs, btrfs, zfs, apfs, ntfs, exfat, fat32, iso9660, squashfs and more — plus UEFI variable management and a format prober."
+    role = "Filesystem-format drivers — ext4, xfs, btrfs, zfs, apfs, ntfs, exfat, fat32, iso9660, squashfs and more — plus UEFI variable management and a format prober. And the other direction: NFSv3, SFTP and WebDAV servers that export any of them, so an image can be mounted by the host rather than only read by a program."
   [[params.families.orgs]]
     name = "go-diskimages"
     repos = 6
