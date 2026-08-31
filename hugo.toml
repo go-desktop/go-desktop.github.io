@@ -13,10 +13,16 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
   title = "Desktop & widgets"
   blurb = "One widget toolkit, every surface it paints on, and the platform plumbing a real desktop needs."
   [[params.families.orgs]]
+    name = "go-gtk"
+    repos = 1
+    site = false
+    docs = false
+    role = "GTK4 driven from pure Go over purego, CGO=0 — the Linux native-toolkit bridge for go-widgets, sibling of go-macos/objc."
+  [[params.families.orgs]]
     name = "go-widgets"
     repos = 19
     site = true
-    docs = false
+    docs = true
     role = "The widget toolkit and every surface it paints on: the painter seam, MVVM, a declarative skin engine, a terminal back-end, a native window on X11, Wayland, Cocoa and Win32, application lifecycle with a system tray, a real Android APK, and a desktop shell."
   [[params.families.orgs]]
     name = "go-freedesktop"
@@ -28,7 +34,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     name = "go-icons"
     repos = 6
     site = true
-    docs = false
+    docs = true
     role = "Icon and logo packs as embedded pure-Go SVG data — Simple Icons brand marks, Devicon, Material and Seti file types, vscode-icons, and Iconoir. One repository per pack, so a program embeds the set it draws and not the other five; the drawing itself is go-gfx's `svg` package."
   [[params.families.orgs]]
     name = "go-thumbnail"
@@ -40,25 +46,25 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     name = "go-keyring"
     repos = 1
     site = true
-    docs = false
+    docs = true
     role = "One secret store over macOS Keychain, Windows Credential Manager and Linux Secret Service — no cgo, no CLI exec."
   [[params.families.orgs]]
     name = "go-macos"
-    repos = 23
+    repos = 24
     site = true
-    docs = false
+    docs = true
     role = "The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, real AppKit controls embedded in a Go-painted window, Keychain and Touch ID, notifications and menu-bar items, accessibility, global hotkeys, login items and launch agents, IOKit HID, DiskArbitration, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto."
   [[params.families.orgs]]
     name = "go-mswin"
     repos = 3
     site = true
-    docs = false
+    docs = true
     role = "The Windows foundation: Win32 bindings and WinRT interop on combase — peer of go-macos/objc — plus DXGI Desktop Duplication and GDI screen capture built on them."
   [[params.families.orgs]]
     name = "wasmdesk"
     repos = 7
     site = true
-    docs = false
+    docs = true
     role = "A desktop in the browser — a Wayland-inspired compositor and window manager, a dock, a login portal, OCI app packaging and a coreutils suite."
 
 [[params.families]]
@@ -81,19 +87,19 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     name = "go-avkit"
     repos = 1
     site = true
-    docs = false
+    docs = true
     role = "An audio/video toolkit — MP4/ISO-BMFF and Matroska/WebM demuxing."
   [[params.families.orgs]]
     name = "go-streamkit"
     repos = 1
-    site = false
-    docs = false
+    site = true
+    docs = true
     role = "Site-agnostic transport for streaming media: a retrying, rate-limited HTTP client, an HLS parser and an MPEG-DASH manifest reader."
   [[params.families.orgs]]
     name = "go-extractors"
     repos = 1
-    site = false
-    docs = false
+    site = true
+    docs = true
     role = "A plugin framework for media extractors — standalone plugin executables answer what is at a URL and what can be downloaded from it."
   [[params.families.orgs]]
     name = "go-xrkit"
@@ -116,7 +122,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     name = "go-typeset"
     repos = 3
     site = true
-    docs = false
+    docs = true
     role = "The typesetting algorithms on their own, with no TeX vocabulary in the API: Knuth-Plass line breaking, Liang hyphenation, the Unicode bidirectional algorithm."
   [[params.families.orgs]]
     name = "go-opentype"
@@ -139,26 +145,26 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
   [[params.families.orgs]]
     name = "go-docutils"
     repos = 2
-    site = false
-    docs = false
+    site = true
+    docs = true
     role = "reStructuredText both ways: docutils' core in pure Go — the parser and the doctree the LaTeX and PDF path is built on — and an extractor that renders a Go package's own API documentation as reST to feed it."
   [[params.families.orgs]]
     name = "go-richdoc"
     repos = 4
-    site = false
-    docs = false
+    site = true
+    docs = true
     role = "One rich-document model, and the converters that read and write it — Markdown, LaTeX and reStructuredText."
   [[params.families.orgs]]
     name = "go-odf"
     repos = 1
-    site = false
-    docs = false
+    site = true
+    docs = true
     role = "OpenDocument Text, in and out of the richdoc model."
   [[params.families.orgs]]
     name = "go-rtf"
     repos = 1
-    site = false
-    docs = false
+    site = true
+    docs = true
     role = "RTF, in and out of the richdoc model."
 
 [[params.families]]
@@ -193,7 +199,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     name = "go-scss"
     repos = 1
     site = true
-    docs = false
+    docs = true
     role = "A Sass/SCSS compiler with Dart-Sass-compatible output — the engine behind the Ruby sass gem."
   [[params.families.orgs]]
     name = "go-mustache"
@@ -223,7 +229,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     name = "go-datetime"
     repos = 1
     site = true
-    docs = false
+    docs = true
     role = "A lenient parser for the dates people actually write."
 
 [[params.families]]
@@ -426,7 +432,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     name = "nano-container-linux"
     repos = 7
     site = true
-    docs = false
+    docs = true
     role = "A minimal container host — OCI initrd and PXE boot, a DNS daemon, an OpenPubKey agent."
 
 [[params.families]]
@@ -443,14 +449,20 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     name = "go-attest"
     repos = 2
     site = true
-    docs = false
+    docs = true
     role = "SPDX and CycloneDX SBOMs, SLSA provenance, and Ed25519 signing that is minisign- and cosign-interoperable from one keypair."
   [[params.families.orgs]]
     name = "go-versions"
     repos = 1
     site = true
-    docs = false
+    docs = true
     role = "Loose, pkgx-compatible semantic versions and ranges, CalVer included."
+  [[params.families.orgs]]
+    name = "go-gitsafe"
+    repos = 1
+    site = false
+    docs = false
+    role = "Guards on what leaves a machine: a global git hook that refuses a credential in a remote URL and a write to the branch pull requests land on, a credential helper that never lets a token reach a command line, and a scope checker that reads a token's powers without printing it."
 
 [[params.families]]
   key = "cloud"
