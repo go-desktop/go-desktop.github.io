@@ -50,7 +50,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "One secret store over macOS Keychain, Windows Credential Manager and Linux Secret Service — no cgo, no CLI exec."
   [[params.families.orgs]]
     name = "go-macos"
-    repos = 24
+    repos = 26
     site = true
     docs = true
     role = "The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, real AppKit controls embedded in a Go-painted window, Keychain and Touch ID, notifications and menu-bar items, accessibility, global hotkeys, login items and launch agents, IOKit HID, DiskArbitration, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto."
@@ -79,7 +79,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "The shared 2D socle: an anti-aliased vector rasteriser, a raster surface, colour, geometry, resampling, and SVG to bitmap."
   [[params.families.orgs]]
     name = "go-images"
-    repos = 1
+    repos = 2
     site = true
     docs = true
     role = "Image processing at scikit-image scope."
@@ -238,7 +238,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
   blurb = "Rendering a page without a browser, and carrying gRPC where gRPC does not go."
   [[params.families.orgs]]
     name = "go-webengine"
-    repos = 2
+    repos = 3
     site = true
     docs = true
     role = "A headless web engine: HTML and CSS laid out and painted to an image, with no Chromium — plus a service that streams those frames to a thin client."
@@ -520,7 +520,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
 [[params.families]]
   key = "config"
   title = "Configuration management"
-  blurb = "The Puppet stack, in Go, without a Ruby runtime."
+  blurb = "The Puppet and Ansible stacks, in Go, without a Ruby or Python runtime."
   [[params.families.orgs]]
     name = "go-puppet"
     repos = 1
@@ -575,6 +575,12 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     site = true
     docs = true
     role = "The Augeas engine: a config tree, path expressions and lenses."
+  [[params.families.orgs]]
+    name = "go-ansible"
+    repos = 10
+    site = false
+    docs = false
+    role = "Ansible: inventory, variable precedence, Jinja2-compatible templating, connection and become plugins, the module protocol, and the playbook engine."
 
 [[params.families]]
   key = "social"
