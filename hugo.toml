@@ -15,8 +15,8 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
   [[params.families.orgs]]
     name = "go-gtk"
     repos = 1
-    site = false
-    docs = false
+    site = true
+    docs = true
     role = "GTK4 driven from pure Go over purego, CGO=0 — the Linux native-toolkit bridge for go-widgets, sibling of go-macos/objc."
   [[params.families.orgs]]
     name = "go-widgets"
@@ -460,8 +460,8 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
   [[params.families.orgs]]
     name = "go-gitsafe"
     repos = 1
-    site = false
-    docs = false
+    site = true
+    docs = true
     role = "Guards on what leaves a machine: a global git hook that refuses a credential in a remote URL and a write to the branch pull requests land on, a credential helper that never lets a token reach a command line, and a scope checker that reads a token's powers without printing it."
 
 [[params.families]]
@@ -584,8 +584,8 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
   [[params.families.orgs]]
     name = "go-remoteexec"
     repos = 1
-    site = false
-    docs = false
+    site = true
+    docs = true
     role = "The layer both orchestrators run commands through: local, SSH and WinRM connections with sudo, su and doas escalation."
 
 [[params.families]]
