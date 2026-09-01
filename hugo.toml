@@ -103,7 +103,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "A plugin framework for media extractors — standalone plugin executables answer what is at a URL and what can be downloaded from it."
   [[params.families.orgs]]
     name = "go-xrkit"
-    repos = 4
+    repos = 5
     site = true
     docs = true
     role = "XR glasses: head orientation, stereo frame packing, flat, equirectangular and fisheye projection, a 360° screen ribbon, a graded catalogue of what each headset can show — plus a player, a virtual desktop on the ribbon, and Android capture."
@@ -578,9 +578,15 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
   [[params.families.orgs]]
     name = "go-ansible"
     repos = 10
+    site = true
+    docs = true
+    role = "Ansible: inventory, variable precedence, Jinja2-compatible templating, connection and become plugins, the module protocol, and the playbook engine."
+  [[params.families.orgs]]
+    name = "go-remoteexec"
+    repos = 1
     site = false
     docs = false
-    role = "Ansible: inventory, variable precedence, Jinja2-compatible templating, connection and become plugins, the module protocol, and the playbook engine."
+    role = "The layer both orchestrators run commands through: local, SSH and WinRM connections with sudo, su and doas escalation."
 
 [[params.families]]
   key = "social"
