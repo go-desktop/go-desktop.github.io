@@ -472,7 +472,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     name = "openweft"
     repos = 70
     site = true
-    docs = false
+    docs = true
     role = "weft — a Go-native microVM cloud: drivers, network, block storage, HA services, runners, clients, native apps, and the loom editor built on it."
   [[params.families.orgs]]
     name = "go-virtio"
