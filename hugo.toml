@@ -50,13 +50,13 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "One secret store over macOS Keychain, Windows Credential Manager and Linux Secret Service — no cgo, no CLI exec."
   [[params.families.orgs]]
     name = "go-macos"
-    repos = 26
+    repos = 29
     site = true
     docs = true
     role = "The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, real AppKit controls embedded in a Go-painted window, Keychain and Touch ID, notifications and menu-bar items, accessibility, global hotkeys, login items and launch agents, IOKit HID, DiskArbitration, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto."
   [[params.families.orgs]]
     name = "go-mswin"
-    repos = 3
+    repos = 5
     site = true
     docs = true
     role = "The Windows foundation: Win32 bindings and WinRT interop on combase — peer of go-macos/objc — plus DXGI Desktop Duplication and GDI screen capture built on them."
@@ -66,6 +66,24 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     site = true
     docs = true
     role = "A desktop in the browser — a Wayland-inspired compositor and window manager, a dock, a login portal, OCI app packaging and a coreutils suite."
+  [[params.families.orgs]]
+    name = "go-gnulinux"
+    repos = 2
+    site = true
+    docs = false
+    role = "Linux's system interfaces in pure Go: hidraw and the authentication factors built on it — the Linux third of the platform layer, beside go-macos and go-mswin."
+  [[params.families.orgs]]
+    name = "go-authn"
+    repos = 3
+    site = true
+    docs = false
+    role = "Proving a person is present: the FIDO client-to-authenticator protocol spoken to a security key on any OS, and the rule that decides whether enough factors answered."
+  [[params.families.orgs]]
+    name = "go-aiquota"
+    repos = 4
+    site = true
+    docs = true
+    role = "A menu-bar application on the toolkit: AI usage quotas across several accounts, read through one go-plugin contract with a plugin per provider."
 
 [[params.families]]
   key = "graphics"
@@ -138,7 +156,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "TeX's SyncTeX — the source-to-PDF correspondence, both ways."
   [[params.families.orgs]]
     name = "go-pdfkit"
-    repos = 12
+    repos = 13
     site = true
     docs = true
     role = "The PDF stack, both directions: a 1.7 writer with TrueType and CFF subsetting, a reader and renderer, AcroForm and XFA form fields, text and structure extraction, a conformance suite judged against poppler, and a co-editable reader application built on all of it."
@@ -577,7 +595,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "The Augeas engine: a config tree, path expressions and lenses."
   [[params.families.orgs]]
     name = "go-ansible"
-    repos = 10
+    repos = 9
     site = true
     docs = true
     role = "Ansible: inventory, variable precedence, Jinja2-compatible templating, connection and become plugins, the module protocol, and the playbook engine."
