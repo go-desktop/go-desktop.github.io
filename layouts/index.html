@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{{/* Dark Reader repaints pages that already draw their own dark theme, as this one does: ask it to stand aside. */}}
+<meta name="darkreader-lock">
 <title>{{ .Site.Title }} — a map of the pure-Go ecosystem</title>
 <meta name="description" content="One map of a pure-Go ecosystem: a widget toolkit and the desktop around it, typesetting and fonts, storage and filesystems, firmware and boot, a Ruby virtual machine with one organisation per gem, SIMD kernels, microVMs and configuration management. CGO_ENABLED=0 throughout, six 64-bit targets, 100% statement coverage as a CI gate, BSD-3-Clause.">
 <style>
