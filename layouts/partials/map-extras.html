@@ -1,0 +1,58 @@
+{{/* The map's own rules — and ONLY the map's own rules.
+
+     This landing is not a product page: it is an index of every organisation
+     in the ecosystem. The shared sheet (landingkit's styles.html) carries the
+     whole design — palette, nav, hero, cards, grid, pills, buttons, the theme
+     toggle and the fork ribbon — and this file adds the few things a map needs
+     that a product landing has no use for: the section jump list, the
+     repository count on a card's title, a card's footer links, and the gem
+     chip grid.
+
+     ⛔ Three rules about what may go in here.
+
+     1. Build on the kit's variables (--ink, --slate, --line, --surface,
+        --chip-*, --accent, --radius), never on new colours. Neutrals belong to
+        the shared sheet; the kit deliberately removed the means to override
+        them, because two landings had grown surface tints that drifted from
+        the reference and nobody saw it until the pages were compared pixel by
+        pixel.
+
+     2. Never restate a rule the kit already has. A copy here is a copy that
+        can drift, which is the exact problem adopting the kit solved.
+
+     3. This block is emitted AFTER styles.html, so `landingkit verify` still
+        compares the kit's block against the reference's: it reads the FIRST
+        <style> element of the built page. That is by design, not a loophole —
+        the kit's contract is the shared sheet, and a landing whose body
+        differs is what landingdiff counts instead. Keeping these rules in a
+        second block is what makes verify keep meaning something here. */}}
+<style>
+  /* The jump list under the hero: one chip per family. */
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:30px 0 0}
+  .toc a{font-size:13px;font-weight:600;padding:5px 12px;border-radius:999px;
+    color:var(--slate);background:var(--surface);border:1px solid var(--line)}
+  .toc a:hover{color:var(--accent);border-color:var(--accent)}
+
+  /* "· 13 organisations" beside a family heading, and the repo count on a card. */
+  .psec h2 .n{color:var(--slate);font-size:14px;font-weight:600;letter-spacing:0}
+  .card h3{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+  .card h3 .count{color:var(--slate);font-size:12.5px;font-weight:600;white-space:nowrap;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+
+  /* A card's footer links sit at the bottom however tall the card grew. */
+  .card{display:flex;flex-direction:column}
+  .card .links{margin-top:auto;padding-top:12px;font-size:13px;font-weight:600}
+  .card .links a{margin-right:14px}
+
+  /* One chip per Ruby gem organisation: 195 of them, so they are dense. */
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+  .chips a{font-size:12.5px;padding:3px 10px;border-radius:7px;
+    color:var(--chip-fg);background:var(--chip-bg);border:1px solid var(--chip-border);
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .chips a:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* The map lists 316 organisations, so its grid breaks earlier than the
+     kit's three fixed columns do: a card holding an organisation's whole
+     role sentence is unreadable at a third of 1120px on a laptop. */
+  @media(max-width:1100px){.grid{grid-template-columns:repeat(2,1fr)}}
+</style>

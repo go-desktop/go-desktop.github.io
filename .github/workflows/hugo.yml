@@ -33,7 +33,12 @@ env:
   # Pin Hugo so site builds don't break when a new release ships
   # incompatible template changes. Bump deliberately, not by
   # surprise.
-  HUGO_VERSION: 0.162.1
+  #
+  # 0.162.1 -> 0.167.0 with the move to the landing kit: the adoption was
+  # measured locally on 0.167.0 (the version go-desktop/docs already pins), and
+  # a gate that runs a different build from the one that was proved is not the
+  # gate anyone thinks it is.
+  HUGO_VERSION: 0.167.0
 
 jobs:
   build:
@@ -48,6 +53,16 @@ jobs:
         uses: actions/checkout@v7
         with:
           submodules: recursive
+
+      # ⛔ Hugo resolves modules with the `go` command, and this site imports
+      # go-fleettools/landingkit for its design. Without Go on the runner the
+      # build fails outright — the whole stylesheet lives in that module.
+      # The version comes from the site's own go.mod, so there is one place
+      # that says which Go this site is built with.
+      - name: Setup Go
+        uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
 
       - name: Setup Pages
         id: pages
