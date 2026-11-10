@@ -51,8 +51,11 @@
     font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
   .chips a:hover{border-color:var(--accent);color:var(--accent)}
 
-  /* The map lists 316 organisations, so its grid breaks earlier than the
-     kit's three fixed columns do: a card holding an organisation's whole
-     role sentence is unreadable at a third of 1120px on a laptop. */
+  /* The map lists every organisation in the ecosystem, so its grid breaks
+     earlier than the kit's three fixed columns do: a card holding an
+     organisation's whole role sentence is unreadable at a third of 1120px
+     on a laptop. (No count here on purpose — it was typed as 316 and was
+     already two refreshes stale by the time anyone read it, and a number
+     in a comment is one nothing regenerates and no check can see.) */
   @media(max-width:1100px){.grid{grid-template-columns:repeat(2,1fr)}}
 </style>
