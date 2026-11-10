@@ -200,6 +200,7 @@ gems = [
 ]
 
 reserved = [
+  "go-pkgx",
   "go-graphdrawing",
   "go-grub",
   "go-quake2",
