@@ -35,17 +35,11 @@
     <p class="sub">{{ $totalOrgs }} organisations and {{ $totalRepos }} repositories of libraries that
       build a desktop, typeset a document, mount a filesystem, boot a machine and run Ruby, with
       <b>no C anywhere</b>.</p>
-    <div class="cta" style="margin-top:26px">
-      <a class="btn btn-primary" href="https://go-desktop.github.io/docs/">{{ partial "icons/book.html" . }}Read the documentation →</a>
-      <a class="btn btn-ghost" href="#map">{{ partial "icons/arrow-right.html" . }}Browse the map</a>
-      <a class="btn btn-ghost" href="https://github.com/go-desktop">{{ partial "icons/github.html" . }}GitHub</a>
-    </div>
+    {{/* [[params.cta]] in hugo.toml (written by go-desktop/catalog): the kit renders the row */}}
+    {{ partial "cta.html" . }}
     <div class="trust">
       <span><b>{{ $totalOrgs }}</b> organisations</span>
-      <span><b>CGO_ENABLED=0</b> throughout</span>
-      <span><b>6</b> 64-bit targets</span>
       <span><b>100%</b> statement coverage as a CI gate</span>
-      <span><b>BSD-3-Clause</b></span>
     </div>
   </div></div>
 
@@ -170,7 +164,7 @@
   </div></section>
 
   <footer><div class="wrap">
-    <span>© the go-desktop authors · BSD-3-Clause</span>
+    <span>© the go-desktop authors{{ if not (partial "mantra-on.html" .) }} · BSD-3-Clause{{ end }}</span>
     <span><a href="https://go-desktop.github.io/docs/">Documentation</a> · <a href="https://github.com/go-desktop/brand">Brand assets</a></span>
   </div></footer>
 </body>
