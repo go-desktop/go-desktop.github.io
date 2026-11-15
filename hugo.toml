@@ -382,7 +382,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
 [[params.families]]
   key = "ruby"
   title = "Languages, in Go"
-  blurb = "Other languages' runtimes, written in pure Go so they embed in a Go program and compile to WebAssembly: a Ruby virtual machine with one organisation per gem it needs, and interpreters for Julia, R and C."
+  blurb = "Other languages' runtimes, written in pure Go so they embed in a Go program and compile to WebAssembly: a Ruby virtual machine with one organisation per gem it needs, and interpreters for Julia, R, C and Fortran."
   [[params.families.orgs]]
     name = "go-embedded-ruby"
     repos = 1
@@ -407,6 +407,12 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     site = false
     docs = false
     role = "C in pure Go: an oracle harness and a C-to-wasm32 compiler, so a notebook cell can hold C."
+  [[params.families.orgs]]
+    name = "go-embedded-fortran"
+    repos = 1
+    site = true
+    docs = true
+    role = "Fortran in pure Go: a front end, an evaluator and an I/O runtime checked against gfortran 15.2.0 by an oracle harness, for notebook cells."
   [[params.families.orgs]]
     name = "go-composites"
     repos = 31
