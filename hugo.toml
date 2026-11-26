@@ -67,13 +67,13 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "GTK4 driven from pure Go over purego, CGO=0 — the Linux native-toolkit bridge for go-widgets, sibling of go-macos/objc."
   [[params.families.orgs]]
     name = "go-widgets"
-    repos = 24
+    repos = 26
     site = true
     docs = true
     role = "The widget toolkit and every surface it paints on: the painter seam, MVVM, a declarative skin engine, a terminal back-end, a native window on X11, Wayland, Cocoa and Win32, application lifecycle with a system tray, a real Android APK, and a desktop shell."
   [[params.families.orgs]]
     name = "go-freedesktop"
-    repos = 10
+    repos = 11
     site = true
     docs = true
     role = "freedesktop.org integration — .desktop entries, icon themes, shared MIME info, application associations, the menu tree, desktop notifications and Secret Service — over an owned X11 protocol core that also serves screen capture and the toolkit's window back-end."
@@ -103,7 +103,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "One secret store over macOS Keychain, Windows Credential Manager and Linux Secret Service — no cgo, no CLI exec."
   [[params.families.orgs]]
     name = "go-macos"
-    repos = 31
+    repos = 33
     site = true
     docs = true
     role = "The macOS foundation, all of it CGO-free through purego: the shared Objective-C runtime bridge, real AppKit controls embedded in a Go-painted window, Keychain and Touch ID, notifications and menu-bar items, accessibility, global hotkeys, login items and launch agents, IOKit HID, DiskArbitration, hardware audio and video decode, ScreenCaptureKit capture, and virtual displays the desktop extends onto."
@@ -127,7 +127,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "Linux's system interfaces in pure Go: hidraw and the authentication factors built on it — the Linux third of the platform layer, beside go-macos and go-mswin."
   [[params.families.orgs]]
     name = "go-authn"
-    repos = 19
+    repos = 28
     site = true
     docs = true
     role = "Who somebody is, and what proves it — a federation's worth of identity in pure Go with no cgo: one directory model over a database, a file or LDAP, and the LDAP server that publishes it; Kerberos both ways, issuing tickets from that directory and accepting them where gokrb5 will not build; SAML as a service provider in RENATER or eduGAIN, and an OIDC provider in front of such a federation; the relying-party and token-verification halves of OpenID Connect; SSH user certificates on the GÉANT/EuroHPC CA profile with revocation lists distributed signed and expiring, beside X.509 CRLs; ACME and on-disk sources for a daemon's own TLS certificate; and the factors a policy asks for — a security key over FIDO CTAP, TOTP, WireGuard keys — with the rule that decides whether enough of them answered."
@@ -137,6 +137,12 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     site = true
     docs = true
     role = "A menu-bar application on the toolkit: AI usage quotas across several accounts, read through one go-plugin contract with a plugin per provider."
+  [[params.families.orgs]]
+    name = "go-aosp"
+    repos = 1
+    site = false
+    docs = false
+    role = "The Android side of the platform layer: what a Java host hands a CGO-free Go payload — DNS servers, HOME, TMPDIR, XDG_CACHE_HOME — so a Go binary inside an APK finds its directories the way it finds them on a desktop."
 
 [[params.families]]
   key = "graphics"
@@ -150,13 +156,13 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "The shared 2D socle: an anti-aliased vector rasteriser, a raster surface, colour, geometry, resampling, and SVG to bitmap."
   [[params.families.orgs]]
     name = "go-images"
-    repos = 8
+    repos = 9
     site = true
     docs = true
     role = "Image processing at scikit-image scope, plus the decoders the standard library does not have or does differently: Photoshop PSD composites, and forks of image/gif, image/jpeg and image/png that upsample four-component chroma the way libjpeg does and can report what a truncated stream did decode, so a half-arrived picture still shows. And one that is not processing at all: depth from a single photograph, and the second eye synthesised from it."
   [[params.families.orgs]]
     name = "go-avkit"
-    repos = 8
+    repos = 9
     site = true
     docs = true
     role = "An audio/video toolkit: MP4/ISO-BMFF, Matroska/WebM and MPEG-TS onto one model, demuxed and muxed — and under it the bitstreams themselves, H.264 and H.265 read down to clause 8.2's picture order counts, VP8 and VP9, over the primitives they share rather than once per codec: RBSP and Exp-Golomb bit reading, NAL framing, and the boolean arithmetic decoder VP8 and VP9 have in common."
@@ -192,10 +198,16 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "The XREAL Air family's USB packet protocol, the other half of what go-xrkit reads head orientation from."
   [[params.families.orgs]]
     name = "go-videodsp"
-    repos = 1
+    repos = 2
     site = false
     docs = false
     role = "Planar YUV to RGBA, the conversion every video decoder in the map ends with, kept in one place rather than once per codec."
+  [[params.families.orgs]]
+    name = "go-perceptual"
+    repos = 6
+    site = false
+    docs = false
+    role = "Perceptual hashing, whatever the medium: the PDQ image hash with all eight dihedral variants from one transform, the TMK+PDQF video signature, Chromaprint's chroma features for audio ported stage by stage against the reference's own unit tests, the decode plumbing that feeds them, one CLI over all three, and a duplicate finder that reports and never deletes."
 
 [[params.families]]
   key = "docs"
@@ -227,7 +239,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "TeX's SyncTeX — the source-to-PDF correspondence, both ways."
   [[params.families.orgs]]
     name = "go-pdfkit"
-    repos = 16
+    repos = 17
     site = true
     docs = true
     role = "The PDF stack, both directions: a 1.7 writer with TrueType and CFF subsetting, a reader and renderer, AcroForm and XFA form fields, text and structure extraction, a conformance suite judged against poppler, and a co-editable reader application built on all of it."
@@ -239,7 +251,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "reStructuredText both ways: docutils' core in pure Go — the parser and the doctree the LaTeX and PDF path is built on — and an extractor that renders a Go package's own API documentation as reST to feed it."
   [[params.families.orgs]]
     name = "go-richdoc"
-    repos = 10
+    repos = 11
     site = true
     docs = true
     role = "One rich-document model, and everything that reads or writes it. Both directions for the markup people edit — Markdown, LaTeX, reStructuredText — and one direction for the formats people are handed: HTML and XHTML, EPUB 2 and 3, Kindle MOBI, FictionBook 2, RFC 5322 mail with its MIME parts, and CSV, JSON, XML or plain text. A format is added by writing one reader against that model, not by writing a converter to each of the others."
@@ -339,7 +351,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
   blurb = "Rendering a page without a browser, and carrying gRPC where gRPC does not go."
   [[params.families.orgs]]
     name = "go-webengine"
-    repos = 3
+    repos = 4
     site = true
     docs = true
     role = "A headless web engine: HTML and CSS laid out and painted to an image, with no Chromium — plus a service that streams those frames to a thin client."
@@ -361,6 +373,12 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     site = true
     docs = true
     role = "gRPC where it is not supposed to go: over SSH, WireGuard, vsock, WebSocket and WebRTC."
+  [[params.families.orgs]]
+    name = "go-turn"
+    repos = 1
+    site = true
+    docs = true
+    role = "STUN and TURN in pure Go: a relay for WebRTC peers, ephemeral credentials behind an OpenID Connect login, and a rendezvous so two peers meet with one link."
 
 [[params.families]]
   key = "collab"
@@ -382,7 +400,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
 [[params.families]]
   key = "ruby"
   title = "Languages, in Go"
-  blurb = "Other languages' runtimes, written in pure Go so they embed in a Go program and compile to WebAssembly: a Ruby virtual machine with one organisation per gem it needs, and interpreters for Julia, R, C and Fortran."
+  blurb = "Other languages' runtimes, written in pure Go so they embed in a Go program and compile to WebAssembly: a Ruby virtual machine with one organisation per gem it needs, and interpreters for Julia, R and C."
   [[params.families.orgs]]
     name = "go-embedded-ruby"
     repos = 1
@@ -408,12 +426,6 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     docs = false
     role = "C in pure Go: an oracle harness and a C-to-wasm32 compiler, so a notebook cell can hold C."
   [[params.families.orgs]]
-    name = "go-embedded-fortran"
-    repos = 1
-    site = true
-    docs = true
-    role = "Fortran in pure Go: a front end, an evaluator and an I/O runtime checked against gfortran 15.2.0 by an oracle harness, for notebook cells."
-  [[params.families.orgs]]
     name = "go-composites"
     repos = 31
     site = true
@@ -431,6 +443,12 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     site = true
     docs = true
     role = "go vet analyzers that make the ecosystem's invariants a compile-time matter."
+  [[params.families.orgs]]
+    name = "go-embedded-fortran"
+    repos = 1
+    site = true
+    docs = true
+    role = "Fortran in pure Go for go-notebook cells: an oracle harness, a front end, and the back end a measured gate decides."
 
 [[params.families]]
   key = "numerics"
@@ -444,7 +462,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "Ergonomic generation of Go-compatible Plan 9 assembly for every 64-bit Go target."
   [[params.families.orgs]]
     name = "go-simd"
-    repos = 23
+    repos = 26
     site = true
     docs = true
     role = "SIMD kernels on all six of Go's 64-bit targets — codecs, hashes, string scans, bitsets, float and int8 dot products."
@@ -526,6 +544,12 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     site = true
     docs = true
     role = "Computational geometry ported from SciPy and Qhull: robust predicates after Shewchuk, Delaunay and Voronoi, convex hulls, k-d trees, every scipy.spatial.distance metric, and rotations with Slerp."
+  [[params.families.orgs]]
+    name = "go-blas"
+    repos = 1
+    site = true
+    docs = false
+    role = "BLAS and LAPACK in pure Go, with the Fortran reference signatures and column-major storage across all four precisions: SIMD GEMM on six architectures, a stated error bound, and a netlib-exact option when bit parity is what is wanted."
 
 [[params.families]]
   key = "compress"
@@ -533,7 +557,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
   blurb = "Making bytes smaller, sending only what changed, and surviving what is lost."
   [[params.families.orgs]]
     name = "go-compressions"
-    repos = 14
+    repos = 16
     site = true
     docs = true
     role = "The codecs and the halves of them that are missing elsewhere: LZFSE, LZ4 and DEFLATE wire-compatible with compress/flate both ways, a bzip2 encoder the standard library does not have, and readers for the formats it never grew — .Z, lzip, LZO1X — plus BLAKE3 and b3sum, and the CLIs that go with them. Correctness is judged against the thing itself: the official BLAKE3 vectors, compress/bzip2, and macOS's own libcompression asked what the bytes should be."
@@ -562,7 +586,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "The block layer — a device contract, NBD, pools, replicas, S3, an OCI image as a block device, GPT and MBR, and parse-hardening guards."
   [[params.families.orgs]]
     name = "go-filesystems"
-    repos = 37
+    repos = 40
     site = true
     docs = true
     role = "One Filesystem interface, and everything that can sit on either side of it. Underneath, the formats: ext4, xfs, btrfs, zfs, apfs, ntfs, exfat, fat32, ffs, ufs, hfsplus, iso9660, squashfs, UEFI variables, a blkid-style prober — and archives read as filesystems rather than unpacked, cab, cpio, rar, rpm, 7z (which also writes), xar and WARC, with one extractor that sniffs the format from the bytes and follows multi-volume sets. Above it, the servers that export any of them — NFSv3, SMB2, SFTP, WebDAV and an S3 object API — so an image is mounted by the host instead of only read by a program. And between the two: a host directory confined with os.Root, a read-only filesystem made writable through a spool, and the same filesystem served across a connection."
@@ -574,7 +598,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "Disk-image formats: qcow2, raw, dmg, tart-oci, in either direction."
   [[params.families.orgs]]
     name = "go-fileshare"
-    repos = 4
+    repos = 5
     site = true
     docs = true
     role = "The product go-filesystems' servers make possible: one configuration and one binary sharing a disk image over SMB, NFS, WebDAV and SFTP, with an OIDC portal, per-server tokens, a file explorer and an admin console across many servers."
@@ -586,16 +610,22 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "Linux kernel ioctl wrappers — zfs, btrfs, loop, device-mapper, block, copy-on-write clones."
   [[params.families.orgs]]
     name = "go-fde"
-    repos = 6
+    repos = 7
     site = true
     docs = true
     role = "Full-disk encryption: LUKS, APFS, and the plumbing that opens them."
   [[params.families.orgs]]
     name = "go-encryptions"
-    repos = 5
+    repos = 15
     site = true
     docs = true
     role = "The modes underneath: CCM, XTS, ZFS crypto."
+  [[params.families.orgs]]
+    name = "go-theca"
+    repos = 2
+    site = true
+    docs = true
+    role = "Key management for an encrypted volume, aware of the hardware key that unlocks it, with a portable desktop GUI for its containers built on the toolkit."
 
 [[params.families]]
   key = "boot"
@@ -603,7 +633,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
   blurb = "What runs before the kernel, and how you prove what ran."
   [[params.families.orgs]]
     name = "go-tpm2"
-    repos = 8
+    repos = 9
     site = true
     docs = true
     role = "TPM 2.0 end to end: transports, the command layer, EFI_TCG2, measured boot, event-log replay and remote attestation."
@@ -637,6 +667,12 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     site = true
     docs = true
     role = "A self-contained client for the DMTF Redfish API of a server's BMC, reading what a node draws out of band."
+  [[params.families.orgs]]
+    name = "go-binfmt"
+    repos = 2
+    site = true
+    docs = true
+    role = "The executable formats around a firmware image: ELF to flat binary, Motorola SREC, Intel HEX and U-Boot uImage, and a pure-Go patchelf that reads and edits an ELF's interpreter, RPATH/RUNPATH and DT_NEEDED."
 
 [[params.families]]
   key = "supply"
@@ -673,7 +709,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
   blurb = "microVMs, guest drivers, supervision, coordination and the network between them."
   [[params.families.orgs]]
     name = "openweft"
-    repos = 70
+    repos = 71
     site = true
     docs = true
     role = "weft — a Go-native microVM cloud: drivers, network, block storage, HA services, runners, clients, native apps, and the loom editor built on it."
@@ -725,6 +761,23 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     site = true
     docs = true
     role = "A container engine for WASI workloads, speaking the Docker Engine API: the engine, a Containerfile builder, Compose, a terminal playground, a dashboard, a classroom relay, and GPU access through wasi-nn and wasi:webgpu."
+  [[params.families.orgs]]
+    name = "go-supervise"
+    repos = 1
+    site = false
+    docs = false
+    role = "A cross-platform service supervisor for Linux, macOS and Windows, beside go-proc's PID-1 half. At design stage: the layered configuration compiles to a resolved plan or a typed refusal, and nothing is supervised yet."
+
+[[params.families]]
+  key = "vcs"
+  title = "Version control & forges"
+  blurb = "Hosting Git itself: the wire protocol underneath, the forge around it, and the CI that runs on it."
+  [[params.families.orgs]]
+    name = "go-vcs"
+    repos = 4
+    site = true
+    docs = true
+    role = "A light, secure Git forge — hosting, web UI, admin gRPC, Actions runners through GARM — standing on an owned implementation of the Git wire protocol v2 and pack files, fuzzed and measured against git itself, with a workflow engine that speaks the gitea-runner protocol and a local agent-facing daemon."
 
 [[params.families]]
   key = "llm"
@@ -930,7 +983,7 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
     role = "Sweeps across the whole map, each answering one question and refusing to answer it vaguely: which default branches are red, which modules declare a toolchain floor below the one a fix needs, which installed tools were built with an older compiler, which repositories decode an image or a ZIP entry with no ceiling, which landing page is the odd one out — plus the shared landing design itself, a mutation runner that proves a test can fail, and a checks-waiter that refuses to call an empty check list a pass."
   [[params.families.orgs]]
     name = "go-agentsync"
-    repos = 1
+    repos = 2
     site = false
     docs = false
     role = "Coordination for sessions that share one machine: leases on repositories so two of them do not edit the same tree, a per-repository mailbox, and a memory index written back and read again, because an entry that reports success and then vanishes is indistinguishable from one never written."
